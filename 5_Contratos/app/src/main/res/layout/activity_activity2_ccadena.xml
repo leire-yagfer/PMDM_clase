@@ -7,4 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".Cadena.Activity2_CCadena">
 
+    <TextView
+        android:id="@+id/tv_textoPrimeraPantalla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Texto que me llega de la primera pantalla"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="106dp" />
+
+    <Button
+        android:id="@+id/bt_segundaPantalla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ir a la segunda pantalla"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="211dp" />
+
+    <EditText
+        android:id="@+id/et_textoParaPrimeraPantalla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Escribe un texto"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="349dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
