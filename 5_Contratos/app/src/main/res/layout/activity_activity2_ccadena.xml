@@ -11,17 +11,23 @@
         android:id="@+id/tv_textoPrimeraPantalla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Texto que me llega de la primera pantalla"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="106dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bt_segundaPantalla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Texto que me llega de la primera pantalla" />
 
     <Button
         android:id="@+id/bt_segundaPantalla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ir a la segunda pantalla"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="211dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449" />
 
     <EditText
         android:id="@+id/et_textoParaPrimeraPantalla"
@@ -30,6 +36,8 @@
         android:ems="10"
         android:hint="Escribe un texto"
         android:inputType="text"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="349dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_segundaPantalla" />
 </androidx.constraintlayout.widget.ConstraintLayout>
