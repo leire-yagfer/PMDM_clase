@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.contrato"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.contrato"
@@ -15,6 +15,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    //AÑADO ESTO SIGUIENTE (SOLO EL buildFeatures) --> sirve para acceder a los componentes del programa --> no hago R.id ni declarar objetos de los tributos --> me permite ahorrarme mucho código
+    buildFeatures{
+        viewBinding = true
     }
 
     buildTypes {
