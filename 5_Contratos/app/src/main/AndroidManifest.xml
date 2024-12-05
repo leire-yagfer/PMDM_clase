@@ -13,10 +13,13 @@
         android:theme="@style/Theme.Contrato"
         tools:targetApi="31">
         <activity
-            android:name=".Contrato.Activity_CEntero"
+            android:name=".Entero.Activity2_CEntero"
             android:exported="false" />
         <activity
-            android:name=".Contrato.Activity_CCadena"
+            android:name=".Entero.Activity_CEntero"
+            android:exported="false" />
+        <activity
+            android:name=".Cadena.Activity_CCadena"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

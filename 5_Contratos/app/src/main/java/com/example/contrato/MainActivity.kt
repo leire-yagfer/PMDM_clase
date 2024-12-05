@@ -2,14 +2,10 @@ package com.example.contrato
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.contrato.Contrato.Activity_CCadena
-import com.example.contrato.Contrato.Activity_CEntero
+import com.example.contrato.Cadena.Activity_CCadena
+import com.example.contrato.Entero.Activity_CEntero
 import com.example.contrato.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

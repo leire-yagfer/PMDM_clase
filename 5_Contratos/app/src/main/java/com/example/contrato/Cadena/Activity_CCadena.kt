@@ -1,4 +1,4 @@
-package com.example.contrato.Contrato
+package com.example.contrato.Cadena
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
