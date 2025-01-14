@@ -1,6 +1,8 @@
 package com.example.a5_menus
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,4 +19,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
-}
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean{
+        super.onCreateOptionsMenu(menu)
+
+        //inflo el menu
+        menuInflater.inflate(R.menu.ejemplomenu, menu)
+        return true
+    }//onCreateOptionsMenu
+
+    public fun mi_funcion(m:MenuItem){
+
+    }//mi_funcion
+}//class
