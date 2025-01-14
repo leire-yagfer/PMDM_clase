@@ -5,7 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
@@ -67,14 +67,19 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
                     replace<fragmentoB>(R.id.fragmentContainerView)
+                    //3º: guardar en la pila los fgragmentos anteriores para que cuando se clique sobre volver atrás no se pierda
+                    setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE) //efecto de como se pasa una a otra
+                    addToBackStack("fragmentoB") //name: guía para el programador, no hace referencia a nada
                 }
             } else{ //está cargado el fragmento b y lo reemplazo por a
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
                     replace<fragmentoA>(R.id.fragmentContainerView)
+                    setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                    addToBackStack("fragmentoA")
                 }
             }//if-else
-            //3º: cambio el valor de carga_fragmentoa porque sino, no se podría hacer más que una vez
+            //4º: cambio el valor de carga_fragmentoa porque sino, no se podría hacer más que una vez
             this.carga_fragmentoa =! carga_fragmentoa
         }//lambda de mibinding.fragmentContainerView.setOnClickListener
     }//onCreate
