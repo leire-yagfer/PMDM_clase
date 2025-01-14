@@ -8,12 +8,20 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.fragment.app.replace
+import com.example.a5_fragmento.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    lateinit var mibinding: ActivityMainBinding
+    var carga_fragmentoa = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+
+        mibinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(mibinding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -40,6 +48,34 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             setReorderingAllowed(true) //OBLIGATORIO para reordenar/actualizar la pila de fragmentos
             add<fragmentoA>(R.id.fragmentContainerView)
-        }
+        }//lamda de supportFragmentManager
+
+
+        //obtener una referencia del FragmentCOntainerView para añadirle la acción onClickListener para que cuando clique, se cambie
+            //VOY A UTILIZAR EL MIBINDING
+        //1º: añadir lo necesario en el build-gradle
+            /*buildFeatures{
+                 viewBinding=true
+              }*/
+        //2º:instancio el mibinding --> ARRIBA PQ TENGO QUE HACERLO ANTES DEL setContentView
+        //3º: acceder a la referencia del fragmentContainer
+        mibinding.fragmentContainerView.setOnClickListener{
+            //REEMPLAZAR EL FRAGMENTO VERDE POR EL AZUL DEL FRAGMENTCONTAINERVIEW
+            //1º: creo un semaforo para comprobar que fragmento esta cargado, para cargar el contrario -> ARRIBA ("carga_fragmentoa")
+            //2º: compruebo cual está cargado
+            if(this.carga_fragmentoa){ //carga_fragmentoa = true, por lo que está cargado --> cargo el b
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace<fragmentoB>(R.id.fragmentContainerView)
+                }
+            } else{ //está cargado el fragmento b y lo reemplazo por a
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace<fragmentoA>(R.id.fragmentContainerView)
+                }
+            }//if-else
+            //3º: cambio el valor de carga_fragmentoa porque sino, no se podría hacer más que una vez
+            this.carga_fragmentoa =! carga_fragmentoa
+        }//lambda de mibinding.fragmentContainerView.setOnClickListener
     }//onCreate
 }//class

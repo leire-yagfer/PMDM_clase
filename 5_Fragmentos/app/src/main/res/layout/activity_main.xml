@@ -30,4 +30,5 @@
 
 <!--Del fragment quito:
     android:name="com.example.a5_fragmento.fragmentoA"
-    para cargarlo desde la clase main directamente-->
+    para cargarlo desde la clase main directamente.
+    De esta forma elijo cuál de todos los fragmentos se me cargan-->
