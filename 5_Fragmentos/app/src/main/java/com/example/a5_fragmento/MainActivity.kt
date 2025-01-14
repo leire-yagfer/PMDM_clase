@@ -3,6 +3,7 @@ package com.example.a5_fragmento
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentTransaction
@@ -41,13 +42,19 @@ class MainActivity : AppCompatActivity() {
         */
 
 
+        //creo el Bundle y lo relleno con info (el bundle del fragmentoA) para pasar la info desde aquí al fragmento
+        //PARA COMUNICAR LOS DOS FRAGMENTOS, TENGO QUE USAR ESTA CLASE (MAINACTIVITY) COMO INTERMEDIARIO
+        val miBundle = bundleOf(fragmentoA.LOGIN to "Pepito", fragmentoA.PASSWORD to "pepitopassword")
+
 
         //CRAGAR FRAGMENTO DE LA FORMA MÁS OPTIMIZADA -> SEGUNDA FORMA
         //1º: añadir la dependencia ("implementation("androidx.fragment:fragment-ktx:1.8.5")")
         //2º: hacer todo lo anterior de forma simplificada en una lamda
         supportFragmentManager.commit {
             setReorderingAllowed(true) //OBLIGATORIO para reordenar/actualizar la pila de fragmentos
-            add<fragmentoA>(R.id.fragmentContainerView)
+            //add<fragmentoA>(R.id.fragmentContainerView) --> lo comento pq es como iría de normal, pero quiero hacer uso del bundle
+            //EXTRA --> PASO EL BUNDLE A FRAGMENTOA
+            add<fragmentoA>(R.id.fragmentContainerView, "", miBundle)
         }//lamda de supportFragmentManager
 
 
