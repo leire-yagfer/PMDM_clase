@@ -61,4 +61,4 @@ class fragmentoA : Fragment() { //clase que hereda de fragment
                 }
             }
     }//companion object*/
-}
+}//class
