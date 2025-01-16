@@ -73,7 +73,14 @@ class MainActivity : AppCompatActivity() {
             if(this.carga_fragmentoa){ //carga_fragmentoa = true, por lo que está cargado --> cargo el b
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
-                    replace<fragmentoB>(R.id.fragmentContainerView)
+                    //replace<fragmentoB>(R.id.fragmentContainerView) --> creo un nuevo fragmento por lo que en caso de tener algo en otro framneto de B, lo perderia y se me creasria otro con solo rojo
+
+
+                    //declaro un objeto en el que introduzco el fragmentoB para que cuando lo reemplace, no se cree uno nuevo, sino que utilizo el mismo
+                    var objetoB = fragmentoB()
+                    //reemplazo con la forma propia que tiene replace de instanciar el fragmento y añadir el fragmento (objetoB en este caso)
+                    replace(R.id.fragmentContainerView, objetoB)
+
                     //3º: guardar en la pila los fgragmentos anteriores para que cuando se clique sobre volver atrás no se pierda
                     setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE) //efecto de como se pasa una a otra
                     addToBackStack("fragmentoB") //name: guía para el programador, no hace referencia a nada
@@ -81,6 +88,7 @@ class MainActivity : AppCompatActivity() {
             } else{ //está cargado el fragmento b y lo reemplazo por a
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
+                    //como estoy creando una nueva instancia del fragmentoA, piedo los datos de login y password
                     replace<fragmentoA>(R.id.fragmentContainerView)
                     setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
                     addToBackStack("fragmentoA")
