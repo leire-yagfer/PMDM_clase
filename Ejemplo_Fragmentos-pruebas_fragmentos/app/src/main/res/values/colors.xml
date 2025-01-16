@@ -1,0 +1,15 @@
+<!-- res/values/colors.xml -->
+<resources>
+    <!-- Colores principales -->
+    <color name="colorPrimary">#6FA3EF</color> <!-- Azul Claro -->
+    <color name="colorPrimaryDark">#4C89D1</color> <!-- Azul Oscuro (para la barra de estado) -->
+    <color name="colorAccent">#F76C6C</color> <!-- Rojo Coral (Acento) -->
+
+    <!-- Colores secundarios -->
+    <color name="colorSecondary">#F4A261</color> <!-- Naranja Suave -->
+
+    <!-- Colores de fondo y texto -->
+    <color name="colorBackground">#FFFFFF</color> <!-- Blanco -->
+    <color name="colorTextPrimary">#333333</color> <!-- Gris oscuro para texto -->
+    <color name="colorTextSecondary">#666666</color> <!-- Gris medio para texto secundario -->
+</resources>

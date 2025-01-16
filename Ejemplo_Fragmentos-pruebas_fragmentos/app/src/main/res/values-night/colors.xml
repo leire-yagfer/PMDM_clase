@@ -1,0 +1,14 @@
+<resources>
+    <!-- Colores principales -->
+    <color name="colorPrimary">#4C89D1</color> <!-- Azul Oscuro -->
+    <color name="colorPrimaryDark">#2A5C9B</color> <!-- Azul más Oscuro -->
+    <color name="colorAccent">#FF5A5A</color> <!-- Rojo Coral Intenso -->
+
+    <!-- Colores secundarios -->
+    <color name="colorSecondary">#D88C48</color> <!-- Naranja Suave Oscuro -->
+
+    <!-- Colores de fondo y texto -->
+    <color name="colorBackground">#121212</color> <!-- Negro Suave -->
+    <color name="colorTextPrimary">#FFFFFF</color> <!-- Blanco para texto principal -->
+    <color name="colorTextSecondary">#B3B3B3</color> <!-- Gris Claro para texto secundario -->
+</resources>
