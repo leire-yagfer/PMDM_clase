@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a5_recyclerview_buenfuncionamiento.R
@@ -43,6 +44,13 @@ class MainActivity : AppCompatActivity() {
 
         //Definir el manejador del Layout del recycler
         this.mirecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false) //LinearLayoutManager.VERTICAL --> indica como se disponen
+
+
+        //añadir un separador vertical a los elementos del recyclerView
+        val divisor = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
+        //le asigno al recyclerView el itmeDecoration
+        this.mirecycler.addItemDecoration((divisor))
+
 
         //asignar una referencia del adapter
         this.miadapter = AdaptadorRecycler(this.lista_datos)
