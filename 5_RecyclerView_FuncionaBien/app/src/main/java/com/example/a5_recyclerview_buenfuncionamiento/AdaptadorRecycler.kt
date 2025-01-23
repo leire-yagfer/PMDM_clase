@@ -56,7 +56,12 @@ class AdaptadorRecycler(private val datos: List<String>): RecyclerView.Adapter<A
 
         //asociar a los elementos visuales de cada elemnto del recyclerView los datos
         fun render(dato: String){
-            itemView.findViewById<TextView>(R.id.textViewElement).text = dato //equivalente: vista.findViewById<TextView>(R.id.textViewElement)
+            binding_holder.textViewElement.text = dato
+
+            //cambiar el color del elemetno seleccionado
+            vista.setOnClickListener{
+                vista.setBackgroundColor(vista.context.getColor(R.color.seleccionado))
+            }
         }//render
 
     }//MiViewHolder
