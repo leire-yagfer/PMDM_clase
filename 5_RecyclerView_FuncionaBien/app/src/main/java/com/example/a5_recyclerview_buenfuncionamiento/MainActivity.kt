@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         inicializar_recyclerview()
+
+        //manejo del FloatingActionButton
+        mibinding.FABAdd.setOnClickListener {
+
+        }//mibinding.FABAdd.setOnClickListener
     }//onCreate
 
 
