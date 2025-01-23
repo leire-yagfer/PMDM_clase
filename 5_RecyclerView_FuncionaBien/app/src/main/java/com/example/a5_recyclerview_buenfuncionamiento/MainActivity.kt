@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     //defino el objeto del Adapter
     lateinit var miadapter: AdaptadorRecycler
     //creo la lñista de datos
-    var lista_datos = mutableListOf("Mercedes", "BMW", "Renault", "Opel", "Ford")
+    var lista_datos = mutableListOf("Mercedes", "BMW", "Renault", "Opel", "Ford", "Kia", "Toyota", "Honda", "Hyundai", "Citroen", "Peugeot","Mercedes", "BMW", "Renault", "Opel", "Ford", "Kia", "Toyota", "Honda", "Hyundai", "Citroen", "Peugeot")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

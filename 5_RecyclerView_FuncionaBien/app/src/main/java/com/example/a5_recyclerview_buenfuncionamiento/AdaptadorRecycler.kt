@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a5_recyclerview_buenfuncionamiento.R
+import com.example.a5_recyclerview_buenfuncionamiento.databinding.ElementsRecycleBinding
 
 
 //VER EL PDF DEL SEGUNDO PARCIAL DE ESTE APARTADO DE RECYCLER
@@ -41,8 +42,17 @@ class AdaptadorRecycler(private val datos: List<String>): RecyclerView.Adapter<A
     }//onBindViewHolder
 
 
+
+
+
     //clase que representa un ViewHolder que hereda de RecyclerView
     class MiViewHolder(val vista: View): RecyclerView.ViewHolder(vista) {
+
+        //hacemos el binding dentro del holder
+        private var binding_holder = ElementsRecycleBinding.bind(vista)
+
+
+
 
         //asociar a los elementos visuales de cada elemnto del recyclerView los datos
         fun render(dato: String){
