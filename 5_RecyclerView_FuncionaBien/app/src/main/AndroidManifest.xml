@@ -13,7 +13,7 @@
         android:theme="@style/Theme._5_RecyclerView_BUenFuncionamiento"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.recycledview.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

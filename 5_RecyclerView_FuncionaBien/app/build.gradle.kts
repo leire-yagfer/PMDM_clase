@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.a5_recyclerview_buenfuncionamiento"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.a5_recyclerview_buenfuncionamiento"
@@ -15,6 +15,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    //2º: AÑADIR EL BINDING
+    buildFeatures{
+        viewBinding = true
     }
 
     buildTypes {
@@ -38,6 +43,8 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+    //1º: AÑADIR LA DEPENDENCIA
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
