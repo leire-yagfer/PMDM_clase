@@ -56,7 +56,14 @@ class MainActivity : AppCompatActivity() {
 
 
         //asignar una referencia del adapter
-        this.miadapter = AdaptadorRecycler(this.lista_datos)
+        this.miadapter = AdaptadorRecycler(this.lista_datos){
+            posicion ->
+            lista_datos.get(posicion).seleccionado =! lista_datos.get(posicion).seleccionado
+            //repinto los elementos
+            miadapter.notifyItemChanged(posicion)
+        }
+
+
 
         //vinculo el RecyclerView al Adaptador
         this.mirecycler.adapter = this.miadapter
