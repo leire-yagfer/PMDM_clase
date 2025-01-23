@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.a5_recyclerview_buenfuncionamiento.Coche
 import com.example.a5_recyclerview_buenfuncionamiento.R
 import com.example.a5_recyclerview_buenfuncionamiento.databinding.ActivityMainBinding
 
@@ -18,8 +19,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var mirecycler: RecyclerView
     //defino el objeto del Adapter
     lateinit var miadapter: AdaptadorRecycler
-    //creo la lñista de datos
-    var lista_datos = mutableListOf("Mercedes", "BMW", "Renault", "Opel", "Ford", "Kia", "Toyota", "Honda", "Hyundai", "Citroen", "Peugeot","Mercedes", "BMW", "Renault", "Opel", "Ford", "Kia", "Toyota", "Honda", "Hyundai", "Citroen", "Peugeot")
+    //creo la lista de datos --> en formato data class
+    var lista_datos = mutableListOf(
+        Coche("Mercedes"), Coche("BMW"), Coche("Renault"), Coche("Opel"), Coche("Ford"), Coche("Kia"), Coche("Toyota"), Coche("Honda"), Coche("Hyundai"), Coche("Citroen"), Coche("Peugeot"),
+        Coche("Mercedes"), Coche("BMW"), Coche("Renault"), Coche("Opel"), Coche("Ford"), Coche("Kia"), Coche("Toyota"), Coche("Honda"), Coche("Hyundai"), Coche("Citroen"), Coche("Peugeot"))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

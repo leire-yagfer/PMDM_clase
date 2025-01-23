@@ -3,14 +3,14 @@ package com.example.recycledview
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.a5_recyclerview_buenfuncionamiento.Coche
 import com.example.a5_recyclerview_buenfuncionamiento.R
 import com.example.a5_recyclerview_buenfuncionamiento.databinding.ElementsRecycleBinding
 
 
 //VER EL PDF DEL SEGUNDO PARCIAL DE ESTE APARTADO DE RECYCLER
-class AdaptadorRecycler(private val datos: List<String>): RecyclerView.Adapter<AdaptadorRecycler.MiViewHolder>() { //clase que hereda de RecycleView
+class AdaptadorRecycler(private val datos: MutableList<Coche>): RecyclerView.Adapter<AdaptadorRecycler.MiViewHolder>() { //clase que hereda de RecycleView
 
     //vincula la vista con el holder y genera y retorna un objeto de tipo ViewHolder --> SE VA A EJECUTAR TANTAS VECES COMO OBJETOS HAYA EN EL RECYCLEVIEW
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MiViewHolder {
@@ -54,15 +54,27 @@ class AdaptadorRecycler(private val datos: List<String>): RecyclerView.Adapter<A
 
 
 
-        //asociar a los elementos visuales de cada elemnto del recyclerView los datos
-        fun render(dato: String){
-            binding_holder.textViewElement.text = dato
+        //asociar a los elementos visuales de cada elemnto del recyclerView los datos --> se invoca siempre que haga sroll
+        fun render(dato: Coche){
+            binding_holder.textViewElement.text = dato.marca
 
             //cambiar el color del elemetno seleccionado
-            vista.setOnClickListener{
+            //cambio el color aquí fuera
+            if(dato.seleccionado){
                 vista.setBackgroundColor(vista.context.getColor(R.color.seleccionado))
             }
-        }//render
+            else{
+                vista.setBackgroundColor(vista.context.getColor(R.color.white))
+            }//if-else
 
+            vista.setOnClickListener{
+                //NO PUEDO HACER AQUÍ EL IF-ELSE PQ LA PROPIEDAD DE VIEWHOLDER CAMBIARÍA TODOS AQUELLOS QUE SE RECICLAN EN UN HOLDER CONCRETO
+                //cambio el valor de seleccionado
+                dato.seleccionado =! dato.seleccionado
+
+                //repintar toda la lista
+                this.bindingAdapter?.notifyDataSetChanged()
+            }//vista.setOnClickListener
+        }//render
     }//MiViewHolder
 }//class
