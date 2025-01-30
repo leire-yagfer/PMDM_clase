@@ -64,6 +64,7 @@ class SuperHeroeAdaptador(val superHeroes:List<SuperHeroe>,val onClickLargo:(Int
             binding.tvSuperHeroName.text=misuperHeroe.superHeroe
             binding.tvRealName.text=misuperHeroe.nombre
             binding.tvPublisher.text=misuperHeroe.publicador
+            //me devuelve el estado del actionModel
             if(MainActivity.actionMode_activo)
             {
                 binding.ivSuperHero.setImageResource(R.drawable.ic_check_circle_24dp)

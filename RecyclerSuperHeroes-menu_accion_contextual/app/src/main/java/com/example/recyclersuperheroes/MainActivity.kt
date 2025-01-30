@@ -1,5 +1,6 @@
 package com.example.recyclersuperheroes
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -16,6 +17,15 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclersuperheroes.adaptador.SuperHeroeAdaptador
+
+
+
+//HACER QUE APAREZCA LA IMAGEN DEL SUPERHÉROE PERO AL SELECCIONAR QUE SE CAMBIE A LA IMAGEN DEL CÍRCULO
+
+
+
+
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var mirecyclerView: RecyclerView
@@ -47,6 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun limpiar_actionMode() {
      actionMode_activo=false;
         //Limpio el menu
