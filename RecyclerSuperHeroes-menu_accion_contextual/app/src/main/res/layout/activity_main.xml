@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+
+
+    <!-- para que el toolbar no desaparezca se pone layout_collapseMode -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        />
+
+
+</com.google.android.material.appbar.AppBarLayout>
+<!-- La propiedad app:layout_behavior es muy
+importante para el CoordinatorLayout gestione el espacio
+al recyclerview debajo del AppBarLayout -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mirecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+       />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
