@@ -11,6 +11,7 @@ import com.example.a5_recyclerview_buenfuncionamiento.databinding.ElementsRecycl
 
 //VER EL PDF DEL SEGUNDO PARCIAL DE ESTE APARTADO DE RECYCLER
 class AdaptadorRecycler(private val datos: MutableList<Coche>, val onClick_item: (Int) -> Unit /*funcion que tiene parámetro de tipo entero y no devuelve nada*/): RecyclerView.Adapter<AdaptadorRecycler.MiViewHolder>() { //clase que hereda de RecycleView
+    /*onClick_item variable que almacena una función que tiene un parámetro de tipo Int y no devuelve nada*/
 
     //vincula la vista con el holder y genera y retorna un objeto de tipo ViewHolder --> SE VA A EJECUTAR TANTAS VECES COMO OBJETOS HAYA EN EL RECYCLEVIEW
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MiViewHolder {
@@ -40,8 +41,9 @@ class AdaptadorRecycler(private val datos: MutableList<Coche>, val onClick_item:
         //itemView == vista --> representa a la vista individual y tiene la misma referencia que vista
         holder.render(datos.get(position), position)
 
-        //cambio de color de los elementos
+        //cambio de color de los elementos concretos
         holder.itemView.setOnClickListener{
+            //
             onClick_item(position)
         }//holder.itemView.setOnClickListener
     }//onBindViewHolder
