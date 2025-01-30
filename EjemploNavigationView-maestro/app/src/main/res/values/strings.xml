@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EjemploNavigationView</string>
+    <string name="abierto">Se abre</string>
+    <string name="cerrado">Se cierra</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fragmento_positivos_text">Fragmento_de_positivos</string>
+    <string name="fragmento_trabajos_text">Fragmento de Trabajos</string>
+</resources>
