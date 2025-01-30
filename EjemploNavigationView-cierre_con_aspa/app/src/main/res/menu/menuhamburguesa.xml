@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/faltas"
+            android:icon="@drawable/ic_tarjeta_roja"
+            android:title="Faltas" />
+        <item android:id="@+id/positivos"
+            android:title="Positivos"
+            android:icon="@drawable/ic_pensamiento_positivo"/>
+        <item android:id="@+id/trabajos"
+            android:title="Trabajos"
+            android:icon="@drawable/positivo"/>
+    </group>
+    <item
+        android:title="SELECCIONA MODULO" >
+        <menu >
+            <item android:title="Base de Datos"
+                android:id="@+id/BD"
+                android:icon="@drawable/ic_base_de_datos"/>
+            <item android:title="PMDM"
+                android:id="@+id/PMDM"
+                android:icon="@drawable/ic_androide"/>
+            <item android:id="@+id/IAW"
+                android:title="IAW"
+                android:icon="@drawable/ic_dominio"/>
+        </menu>
+    </item>
+</menu>
