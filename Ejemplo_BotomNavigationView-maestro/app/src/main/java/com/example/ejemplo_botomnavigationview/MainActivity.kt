@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.favorito -> {
+                    //comprobar si
                     cargar_fragmento(FragmentFavourite())
                 }
             }
