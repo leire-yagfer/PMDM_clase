@@ -1,5 +1,6 @@
 package com.example.recyclersuperheroes
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -112,6 +113,13 @@ class MainActivity : AppCompatActivity() {
                 //Notifico de los cambios al adaptador
                 miadaptador.notifyItemChanged(posicion)
             }
+        }
+        else{
+            //abro la actividad de detalles
+            var miintent = Intent(this, detalles_superheroe::class.java)
+                                    //clave   ,  valor
+            miintent.putExtra("posicion", posicion)
+            startActivity(miintent)
         }
     }
 
