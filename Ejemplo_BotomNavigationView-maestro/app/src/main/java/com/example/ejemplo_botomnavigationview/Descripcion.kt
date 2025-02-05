@@ -1,6 +1,7 @@
 package com.example.ejemplo_botomnavigationview
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,5 +21,15 @@ class Descripcion : AppCompatActivity() {
         var texto:String = intent.getStringExtra("nombre")?:"Nada"
 
         findViewById<TextView>(R.id.textView3).setText(texto)
+
+        setSupportActionBar(findViewById(R.id.toolbar2))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) { //Ese ID es propio de android, lo comparten todas las flechas hacia atras
+                finish()
+            }
+        return true
     }
 }

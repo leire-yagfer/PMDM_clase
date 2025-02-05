@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,7 +44,7 @@ class Configuracion : Fragment() {
 
 
         //Esto iría en el proveedor
-        var lista = listOf("Hola", "Adios", "Que Tal","Hola", "Adios", "Que Tal","Hola", "Adios", "Que Tal","Hola", "Adios", "Que Tal","Hola", "Adios", "Que Tal")
+        var lista = mutableListOf("Hola", "Adios", "Que Tal","Hola", "Adios", "Que Tal","Hola", "Adios", "Que Tal","Hola", "Adios", "Que Tal","Hola", "Adios", "Que Tal")
 
         var adapter = TextoAdapter(lista, funcionPadre = { texto->
             var miIntent:Intent = Intent(context, Descripcion::class.java)
@@ -52,6 +54,27 @@ class Configuracion : Fragment() {
 
         recycler.layoutManager = LinearLayoutManager(container?.context, LinearLayoutManager.VERTICAL, false)
         recycler.adapter = adapter
+
+        var anadir = binding.floatingActionButton
+
+        anadir.setOnClickListener{
+            var builder = AlertDialog.Builder(container!!.context)
+
+            var textfield = EditText(context)
+            textfield.hint = "Escribe un nombre"
+
+            builder.setView(textfield)
+
+            builder.setPositiveButton("Añadir", {dialogo, _ ->
+                if(!textfield.text.isEmpty()){
+                    lista.add(textfield.text.toString())
+                    adapter.notifyItemInserted(lista.size-1) //posicion en la que tiene que mirar a ver si se ha añadido
+                    dialogo.dismiss()
+                }
+            })
+
+            builder.create().show()
+        }
 
         return view
     }
